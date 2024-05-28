@@ -13,35 +13,49 @@
     max-height: 250px;
     margin-right: 20px;
     cursor: pointer;
-    transition: transform 0.3s ease-in-out;
-    -webkit-transition: transform 0.3s ease-in-out;
-    -moz-transition: transform 0.3s ease-in-out;
-    -ms-transition: transform 0.3s ease-in-out;
-    -o-transition: transform 0.3s ease-in-out;
 }
 
 .posters::-webkit-scrollbar{
     display: none;
 }
-.poster:hover{
-    transform: scale(1.05);
-    -webkit-transform: scale(1.05);
-    -moz-transform: scale(1.05);
-    -ms-transform: scale(1.05);
-    -o-transform: scale(1.05);
-}
 
 .smallPoster{
     max-height: 200px;
-    margin-right: 15px;
+    margin-right: 5px;
     cursor: pointer;
+}
+
+.poster-text{
+    color: white;
+    position: absolute;
+    bottom: 10%;
+    transition: transform 0.3s ease-in-out, opacity 0.3s ease-in-out, font-size 0.3s ease-in-out;
+    -webkit-transition: transform 0.3s ease-in-out, opacity 0.3s ease-in-out, font-size 0.3s ease-in-out;
+    -moz-transition: transform 0.3s ease-in-out, opacity 0.3s ease-in-out, font-size 0.3s ease-in-out;
+    -ms-transition: transform 0.3s ease-in-out, opacity 0.3s ease-in-out, font-size 0.3s ease-in-out;
+    -o-transition: transform 0.3s ease-in-out, opacity 0.3s ease-in-out, font-size 0.3s ease-in-out;
+    margin-left: 10px;
+    opacity: 0.7;
+    max-width: calc(100% - 20px); /* Ensure text doesn't go beyond the container */
+    white-space: wrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
+.poster-container{
+    display: flex;
+    flex-direction: column;
+    margin-left: 20px;
+    background-color: rgba(0, 0, 0, 0.5);
     transition: transform 0.3s ease-in-out;
     -webkit-transition: transform 0.3s ease-in-out;
     -moz-transition: transform 0.3s ease-in-out;
     -ms-transition: transform 0.3s ease-in-out;
     -o-transition: transform 0.3s ease-in-out;
+    white-space: nowrap;
+    position: relative;
 }
-.smallPoster:hover{
+.poster-container:hover{
     transform: scale(1.05);
     -webkit-transform: scale(1.05);
     -moz-transform: scale(1.05);
@@ -49,7 +63,9 @@
     -o-transform: scale(1.05);
 }
 
-.poster-text{
-    position: absolute;
-    bottom: 10%;
+.poster-container:hover .poster-text {
+    transform: translateY(-10px); /* Optional for a slight upward movement */
+    opacity: 1; /* Ensure text becomes fully opaque on hover */
+    font-size: 1.4em; /* Increase the font size on hover */
+    color: red;
 }

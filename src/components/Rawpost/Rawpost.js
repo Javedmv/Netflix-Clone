@@ -35,10 +35,10 @@ function Rawpost({title,urls,isSmall}) {
         <h2 style={{color:'white'}}>{title}</h2>
         <div className='posters'>
             { movies.map((movie) => (
-              <>
+              <div className='poster-container'>
                 <img onClick={()=> handleMovieTrailer(movie.id)} className={isSmall?'smallPoster':'poster'} src={imageUrl+movie.backdrop_path} alt='poster' key={movie.id} /> 
                 <h3 className='poster-text'>{movie.title || movie.name}</h3>
-              </>
+              </div>
             )
           ) }
         </div>
