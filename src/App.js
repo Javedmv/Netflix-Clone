@@ -1,5 +1,6 @@
 import './App.css';
 import Banner from './components/Banner/Banner';
+import Footer from './components/Footer/Footer';
 import Navbar from './components/Navbar/Navbar';
 import Rawpost from './components/Rawpost/Rawpost';
 import { originals, ActionMovies, ComedyMovies, HorrorMovies, Documentaries} from './urls';
@@ -14,6 +15,7 @@ function App() {
       <Rawpost urls={ComedyMovies} title='Comedy Movie' isSmall/>
       <Rawpost urls={HorrorMovies} title='Horror Movies' isSmall/>
       <Rawpost urls={Documentaries} title='Documentaries' isSmall/>
+      <Footer/>
     </>
   );
 }

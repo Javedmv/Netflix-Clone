@@ -36,32 +36,41 @@
     -o-transition: transform 0.3s ease-in-out, opacity 0.3s ease-in-out, font-size 0.3s ease-in-out;
     margin-left: 10px;
     opacity: 0.7;
-    max-width: calc(100% - 20px); /* Ensure text doesn't go beyond the container */
+    max-width: calc(100% - 20px);
     white-space: wrap;
     overflow: hidden;
     text-overflow: ellipsis;
 }
 
-.poster-container{
+.poster-container {
     display: flex;
     flex-direction: column;
     margin-left: 20px;
     background-color: rgba(0, 0, 0, 0.5);
-    transition: transform 0.3s ease-in-out;
-    -webkit-transition: transform 0.3s ease-in-out;
-    -moz-transition: transform 0.3s ease-in-out;
-    -ms-transition: transform 0.3s ease-in-out;
-    -o-transition: transform 0.3s ease-in-out;
+    border-left: 0px solid red;
+    transition:transform 0.3s ease-in-out;
+    -webkit-transition:transform 0.3s ease-in-out;
+    -moz-transition:transform 0.3s ease-in-out;
+    -ms-transition:transform 0.3s ease-in-out;
+    -o-transition:transform 0.3s ease-in-out;
     white-space: nowrap;
     position: relative;
+    -webkit-transition: transform 0.3s ease-in-out,;
 }
-.poster-container:hover{
-    transform: scale(1.05);
-    -webkit-transform: scale(1.05);
-    -moz-transform: scale(1.05);
-    -ms-transform: scale(1.05);
-    -o-transform: scale(1.05);
+.poster-container::before {
+    content: '';
+    position: absolute;
+    left: -4px; /* Initial position, outside the container */
+    top: 0;
+    bottom: 0;
+    background-color: red;
+    transition: left 0.3s ease-in-out; /* Transition the left position */
 }
+
+.poster-container:hover::before {
+    width: 4px; 
+}
+
 
 .poster-container:hover .poster-text {
     transform: translateY(-10px); /* Optional for a slight upward movement */
